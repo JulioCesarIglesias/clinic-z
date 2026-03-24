@@ -35,7 +35,7 @@ const LoginSchema = z.object({
   password: z
     .string()
     .trim()
-    .min(6, { message: "Senha deve ter no mínimo 6 caracteres" }),
+    .min(8, { message: "Senha deve ter no mínimo 8 caracteres" }),
 });
 
 const LoginForm = () => {
