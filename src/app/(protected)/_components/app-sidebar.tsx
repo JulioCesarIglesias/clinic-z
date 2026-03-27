@@ -11,6 +11,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -58,7 +59,7 @@ const items = [
 
 export function AppSidebar() {
   const router = useRouter();
-  // const session = authClient.useSession();
+  const session = authClient.useSession();
   // const pathname = usePathname();
 
   const handleSignOut = async () => {
@@ -69,6 +70,19 @@ export function AppSidebar() {
         },
       },
     });
+  };
+
+  const initialName = () => {
+    const name = session.data?.user?.name;
+    if (!name) return "?";
+
+    const names = name.trim().split(" ");
+
+    if (names.length === 1) {
+      return names[0][0].toUpperCase();
+    }
+
+    return (names[0][0] + names[names.length - 1][0]).toUpperCase();
   };
 
   return (
@@ -100,7 +114,24 @@ export function AppSidebar() {
           <SidebarMenuItem>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
-                <Button>Sair</Button>
+                <SidebarMenuButton size="lg">
+                  <Avatar>
+                    <AvatarFallback>{initialName()}</AvatarFallback>
+                  </Avatar>
+
+                  <div className="flex flex-col overflow-hidden">
+                    <p className="truncate text-sm">
+                      {session.data?.user?.clinic?.name}
+                    </p>
+
+                    <p
+                      className="text-muted-foreground truncate text-sm"
+                      title={session.data?.user.email}
+                    >
+                      {session.data?.user.email}
+                    </p>
+                  </div>
+                </SidebarMenuButton>
               </DropdownMenuTrigger>
               <DropdownMenuContent>
                 <DropdownMenuItem onClick={handleSignOut}>
