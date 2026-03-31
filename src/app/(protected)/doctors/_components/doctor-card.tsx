@@ -87,7 +87,7 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
           <CalendarIcon className="mr-1 h-4 w-4 shrink-0" />
           <span className="break-words">
             {availability.from.format("dddd").charAt(0).toUpperCase() +
-              availability.from.format("dddd").slice(1)}{" "}
+              availability.from.format("dddd").slice(1)}
             a{" "}
             {availability.to.format("dddd").charAt(0).toUpperCase() +
               availability.to.format("dddd").slice(1)}
