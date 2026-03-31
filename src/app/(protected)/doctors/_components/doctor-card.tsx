@@ -84,10 +84,13 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
           variant="outline"
           className="flex max-w-full items-center gap-1 whitespace-normal"
         >
-          <CalendarIcon className="h-4 w-4 shrink-0" />
+          <CalendarIcon className="mr-1 h-4 w-4 shrink-0" />
           <span className="break-words">
-            {availability.from.format("dddd")} a{" "}
-            {availability.to.format("dddd")}
+            {availability.from.format("dddd").charAt(0).toUpperCase() +
+              availability.from.format("dddd").slice(1)}{" "}
+            a{" "}
+            {availability.to.format("dddd").charAt(0).toUpperCase() +
+              availability.to.format("dddd").slice(1)}
           </span>
         </Badge>
         <Badge variant="outline">
@@ -115,6 +118,7 @@ const DoctorCard = ({ doctor }: DoctorCardProps) => {
               availableFromTime: availability.from.format("HH:mm:ss"),
               availableToTime: availability.to.format("HH:mm:ss"),
             }}
+            isOpen={isUpsertDoctorDialogOpen}
             onSuccess={() => setIsUpsertDoctorDialogOpen(false)}
           />
         </Dialog>
