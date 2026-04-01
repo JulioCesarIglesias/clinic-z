@@ -5,9 +5,10 @@ import { Input } from "@/components/ui/input";
 interface CurrencyInputProps {
   value?: number;
   onChange: (value: number) => void;
+  disabled?: boolean;
 }
 
-export function CurrencyInput({ value = 0, onChange }: CurrencyInputProps) {
+export function CurrencyInput({ value = 0, onChange, disabled }: CurrencyInputProps) {
   const format = (cents: number) => {
     return (cents / 100).toLocaleString("pt-BR", {
       minimumFractionDigits: 2,
@@ -31,6 +32,7 @@ export function CurrencyInput({ value = 0, onChange }: CurrencyInputProps) {
       onChange={handleChange}
       placeholder="R$ 0,00"
       inputMode="numeric"
+      disabled={disabled}
       // className="text-right"
     />
   );
