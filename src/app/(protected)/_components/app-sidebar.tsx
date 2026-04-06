@@ -5,6 +5,7 @@ import {
   LayoutDashboard,
   LogOut,
   Stethoscope,
+  Sun,
   UserRound,
 } from "lucide-react";
 import Image from "next/image";
@@ -31,6 +32,8 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { authClient } from "@/lib/auth-client";
+
+import { ToggleTheme } from "./toggle-theme";
 
 // Menu items.
 const items = [
@@ -137,6 +140,7 @@ export function AppSidebar() {
                   <LogOut />
                   Sair
                 </DropdownMenuItem>
+                <ToggleTheme />
               </DropdownMenuContent>
             </DropdownMenu>
           </SidebarMenuItem>
