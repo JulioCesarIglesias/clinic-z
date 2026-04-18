@@ -1,4 +1,5 @@
 import { eq } from "drizzle-orm";
+import { User } from "lucide-react";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -58,7 +59,21 @@ const PatientsPage = async () => {
             ))}
           </div>
         )} */}
-        <DataTable columns={patientTableColumns} data={patients} />
+        {patients.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-16">
+            <div className="flex h-16 w-16 items-center justify-center">
+              <User className="text-muted-foreground h-10 w-10" />
+            </div>
+            <h3 className="mt-4 text-lg font-semibold">
+              Nenhum paciente cadastrado
+            </h3>
+            <p className="text-muted-foreground mt-2 text-sm">
+              Adicione seu primeiro paciente para começar
+            </p>
+          </div>
+        ) : (
+          <DataTable columns={patientTableColumns} data={patients} />
+        )}
       </PageContent>
     </PageContainer>
   );

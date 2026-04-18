@@ -1,4 +1,5 @@
 import { eq } from "drizzle-orm";
+import { Stethoscope } from "lucide-react";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -44,8 +45,16 @@ const DoctorsPage = async () => {
       </PageHeader>
       <PageContent>
         {doctors.length === 0 ? (
-          <div className="flex flex-col items-center justify-center gap-2 py-10">
-            <p className="text-muted-foreground">Nenhum médico encontrado.</p>
+          <div className="flex flex-col items-center justify-center py-16">
+            <div className="flex h-16 w-16 items-center justify-center">
+              <Stethoscope className="text-muted-foreground h-10 w-10" />
+            </div>
+            <h3 className="mt-4 text-lg font-semibold">
+              Nenhum médico cadastrado
+            </h3>
+            <p className="text-muted-foreground mt-1 text-sm">
+              Cadastre um médico para começar a gerenciar sua equipe.
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
