@@ -1,5 +1,6 @@
 import { ArrowLeft, CalendarCheck, Shield, Stethoscope } from "lucide-react";
 import { headers } from "next/headers";
+import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
@@ -40,10 +41,7 @@ const AuthenticationPage = async () => {
               Voltar para o início
             </Link>
             <div className="flex items-center gap-3">
-              <div className="bg-primary-foreground/20 flex h-12 w-12 items-center justify-center rounded-xl backdrop-blur-sm">
-                <Stethoscope className="h-7 w-7" />
-              </div>
-              <span className="text-2xl font-bold">Clinic-Z</span>
+              <span className="text-2xl font-bold">Medixy</span>
             </div>
           </div>
 
@@ -89,7 +87,7 @@ const AuthenticationPage = async () => {
           {/* Footer */}
           <div className="text-primary-foreground/60 text-sm">
             <p>
-              &copy; {new Date().getFullYear()} Clinic-Z. Todos os direitos
+              &copy; {new Date().getFullYear()} Medixy. Todos os direitos
               reservados.
             </p>
           </div>
@@ -109,10 +107,7 @@ const AuthenticationPage = async () => {
               Voltar
             </Link>
             <div className="flex items-center justify-center gap-3">
-              <div className="bg-primary text-primary-foreground flex h-10 w-10 items-center justify-center rounded-xl">
-                <Stethoscope className="h-6 w-6" />
-              </div>
-              <span className="text-xl font-bold">Clinic-Z</span>
+              <Image src="/Logo.svg" alt="Medixy" width={207} height={32} />
             </div>
           </div>
 

@@ -20,7 +20,7 @@ export function SidebarHeaderLogo() {
         alt="Clinic Z"
         width={isCollapsed ? 28 : 207}
         height={isCollapsed ? 28 : 32}
-        className="shrink-0 transition-all duration-200"
+        className="shrink-0"
       />
     </div>
   );

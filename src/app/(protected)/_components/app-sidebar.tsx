@@ -2,13 +2,12 @@
 
 import {
   CalendarDays,
+  Diamond,
   LayoutDashboard,
   LogOut,
   Stethoscope,
-  Sun,
   UserRound,
 } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -31,6 +30,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
+import { SidebarHeaderLogo } from "@/components/ui/sidebar-header-logo";
 import { authClient } from "@/lib/auth-client";
 
 import { ToggleTheme } from "./toggle-theme";
@@ -89,8 +89,10 @@ export function AppSidebar() {
 
   return (
     <Sidebar collapsible="icon">
-      <SidebarHeader className="border-b p-4">
-        <Image src="/Logo.svg" alt="Clinic Z" width={136} height={28} />
+      {/* <SidebarHeader className="border-b p-4"> */}
+      <SidebarHeader className="m-0 p-0">
+        {/* <Image src="/Logo.svg" alt="Clinic Z" width={207} height={32} /> */}
+        <SidebarHeaderLogo />
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
@@ -110,6 +112,24 @@ export function AppSidebar() {
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Outros</SidebarGroupLabel>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  asChild
+                  isActive={pathname === "/subscription"}
+                >
+                  <Link href={"/subscription"}>
+                    <Diamond />
+                    <span>Assinatura</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
         <SidebarMenu>
@@ -118,7 +138,9 @@ export function AppSidebar() {
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton size="lg">
                   <Avatar>
-                    <AvatarFallback>{initialName()}</AvatarFallback>
+                    <AvatarFallback className="bg-primary text-primary-foreground">
+                      {initialName()}
+                    </AvatarFallback>
                   </Avatar>
 
                   <div className="flex flex-col overflow-hidden">

@@ -12,6 +12,7 @@ import {
   Users,
   Wrench,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 import { Badge } from "@/components/ui/badge";
@@ -31,10 +32,7 @@ export default function Home() {
       <header className="bg-background/80 sticky top-0 z-50 border-b backdrop-blur-sm">
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
           <div className="flex items-center gap-2">
-            <div className="bg-primary flex size-9 items-center justify-center rounded-lg">
-              <Stethoscope className="text-primary-foreground size-5" />
-            </div>
-            <span className="text-xl font-bold">Clinic-Z</span>
+            <Image src="/Logo.svg" alt="Medixy" width={207} height={32} />
           </div>
           <nav className="hidden items-center gap-6 md:flex">
             <a
@@ -83,7 +81,7 @@ export default function Home() {
             <span className="text-primary">simplicidade</span>
           </h1>
           <p className="text-muted-foreground mx-auto mt-6 max-w-2xl text-lg text-pretty">
-            Clinic-Z é a solução completa para gestão de clínicas médicas.
+            Medixy é a solução completa para gestão de clínicas médicas.
             Controle agendamentos, pacientes, médicos e muito mais em uma única
             plataforma intuitiva.
           </p>
@@ -218,7 +216,7 @@ export default function Home() {
                 Benefícios
               </Badge>
               <h2 className="text-3xl font-bold text-balance md:text-4xl">
-                Por que escolher o Clinic-Z?
+                Por que escolher o Medixy?
               </h2>
               <p className="text-muted-foreground mt-4">
                 Desenvolvido pensando nas necessidades reais de clínicas e
@@ -307,8 +305,8 @@ export default function Home() {
             Pronto para transformar a gestão da sua clínica?
           </h2>
           <p className="text-primary-foreground/80 mx-auto mt-4 max-w-2xl">
-            Comece agora mesmo e descubra como o Clinic-Z pode simplificar o dia
-            a dia da sua clínica médica
+            Comece agora mesmo e descubra como o Medixy pode simplificar o dia a
+            dia da sua clínica médica
           </p>
           <Button size="lg" variant="secondary" className="mt-8" asChild>
             <Link href="/authentication">
@@ -324,13 +322,10 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4">
           <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
             <div className="flex items-center gap-2">
-              <div className="bg-primary flex size-8 items-center justify-center rounded-lg">
-                <Stethoscope className="text-primary-foreground size-4" />
-              </div>
-              <span className="font-bold">Clinic-Z</span>
+              <Image src="/Logo.svg" alt="Medixy" width={207} height={32} />
             </div>
             <p className="text-muted-foreground text-sm">
-              &copy; {new Date().getFullYear()} Clinic-Z. Todos os direitos
+              &copy; {new Date().getFullYear()} Medixy. Todos os direitos
               reservados.
             </p>
             <div className="flex gap-6">

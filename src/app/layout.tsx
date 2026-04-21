@@ -14,9 +14,12 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: "Clinic-Z | Sistema de Gestão para Clínicas",
+  title: "Medixy | Sistema de Gestão para Clínicas",
   description:
-    "Clinic-Z é a solução completa para gestão de clínicas médicas. Controle agendamentos, pacientes, médicos e muito mais em uma única plataforma intuitiva.",
+    "Medixy é a solução completa para gestão de clínicas médicas. Controle agendamentos, pacientes, médicos e muito mais em uma única plataforma intuitiva.",
+  icons: {
+    icon: "/Logo-min.svg",
+  },
 };
 
 export default function RootLayout({
