@@ -177,7 +177,7 @@ export function DataTable<TData, TValue>({
           </div>
 
           {/* Toggle columns */}
-          <DropdownMenu>
+          {/* <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <Button variant="outline">
                 <Columns3Cog className="h-4 w-4" />
@@ -201,7 +201,7 @@ export function DataTable<TData, TValue>({
                   </DropdownMenuCheckboxItem>
                 ))}
             </DropdownMenuContent>
-          </DropdownMenu>
+          </DropdownMenu> */}
         </div>
       </div>
 
