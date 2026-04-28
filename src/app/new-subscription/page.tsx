@@ -3,17 +3,25 @@ import { redirect } from "next/navigation";
 
 import { auth } from "@/lib/auth";
 
+import { FreePlan } from "../(protected)/subscription/_components/free-plan";
 import { SubscriptionPlan } from "../(protected)/subscription/_components/subscription-plan";
+import LogoutButton from "./_components/logout";
 
 export default async function Home() {
   const session = await auth.api.getSession({
     headers: await headers(),
   });
+
   if (!session) {
     redirect("/login");
   }
+
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-gray-50 to-gray-100 p-6">
+      {/* Botão de logout */}
+      <div className="flex justify-end p-4">
+        <LogoutButton />
+      </div>
       <div className="mb-8 w-full max-w-3xl text-center">
         <h1 className="mb-4 text-3xl font-bold text-gray-900">
           Desbloqueie todo o potencial da sua clínica
@@ -36,7 +44,8 @@ export default async function Home() {
         </div>
       </div>
 
-      <div className="w-full max-w-md">
+      <div className="grid w-full max-w-4xl grid-cols-1 gap-6 md:grid-cols-2">
+        <FreePlan />
         <SubscriptionPlan userEmail={session.user.email} />
       </div>
 
