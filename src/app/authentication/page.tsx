@@ -1,4 +1,4 @@
-import { ArrowLeft, CalendarCheck, Shield, Stethoscope } from "lucide-react";
+import { ArrowLeft, CalendarCheck, Shield } from "lucide-react";
 import { headers } from "next/headers";
 import Image from "next/image";
 import Link from "next/link";

@@ -8,7 +8,6 @@ import {
   Shield,
   Sparkles,
   Stethoscope,
-  User,
   Users,
   Wrench,
 } from "lucide-react";
