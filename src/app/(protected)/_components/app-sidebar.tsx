@@ -67,6 +67,7 @@ export function AppSidebar() {
   const handleSignOut = async () => {
     await authClient.signOut({
       fetchOptions: {
+        credentials: "include", // ADICIONA ISSO
         onSuccess: () => {
           router.push("/authentication");
         },

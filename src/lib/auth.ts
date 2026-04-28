@@ -8,6 +8,12 @@ import * as schema from "@/db/schema";
 import { usersTable, usersToClinicsTable } from "@/db/schema";
 
 export const auth = betterAuth({
+  trustedOrigins: [
+    "http://localhost:3000",
+    "https://clinic-z.vercel.app",
+    "https://*.vercel.app",
+  ],
+
   // Configura o banco de dados
   database: drizzleAdapter(db, {
     provider: "pg", // or "sqlite" or "mysql"
